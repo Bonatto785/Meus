@@ -1,0 +1,42 @@
+# o código imprime as opções de uma calculadora
+
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t********************')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t*   calculadora    *')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t********************')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t|+ para somar      |')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t|- para subtrair   |')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t|x para multiplicar|')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t|/ para dividir    |')
+print('\033[7;30;m\t\t\t\t\t\t\t\t\t====================')
+print('\033[1;30;m')
+
+# agora o usuario escolhe uma opção
+func = input('Digite a opção: ')
+
+# se a opção for equivalente a soma, o programa pedirá para que sejam digitados dois numeros e os somará, imprimindo a equação e o resultado
+if func == '+':
+    n = float(input('Digite um número: '))
+    m = float(input('Digite agora o outro número que você quer somar: '))
+    o = n + m
+    print('{} + {} = {}'.format(n, m, o))
+
+# mas se a opção for de subtração ele apresentará a subtração dos números digitados
+elif func == '-':
+    n = float(input('Digite um número: '))
+    m = float(input('Digite agora o número que você quer subtrair: '))
+    o = n - m
+    print('{} - {} = {}'.format(n, m, o))
+
+# se for multiplicação ele multiplicará os dois números
+elif func == 'x' or func == 'X' or func == '*':
+    n = float(input('Digite um número: '))
+    m = float(input('Digite agora o número pelo qual você quer multiplicar: '))
+    o = n * m
+    print('{} x {} = {}'.format(n, m, o))
+
+# e caso não seja nenhum dos outros a divisão será realizada com os numeros digitados
+else:
+    n = float(input('Digite um número: '))
+    m = float(input('Digite agora o número pelo qual você quer dividir: '))
+    o = n / m
+    print('{} ÷ {} = {}'.format(n, m, o))
