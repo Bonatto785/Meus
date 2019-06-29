@@ -1,0 +1,11 @@
+# O programa mostra todos os números da sequencia de fibonacci até o número indicado pelo usuario
+
+print('Veja a sequencia de fibonacci até o número que deseja')
+x = 1
+y = 1
+n = int(input('Digite o número maximo'))
+while x <= n
+    soma = x
+    x += y
+    y = soma
+    print(x)
