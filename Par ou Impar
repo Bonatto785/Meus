@@ -1,0 +1,47 @@
+import random
+
+# a variável 's' recebe se o usuário deseja jogar ou não
+s = str(input('Vamos jogar par ou impar? [S/n]')).upper()
+
+# enquanto a resposta for relativa a sim o jogo continua rodando
+while s == 'S' or s == 'SIM':
+    # Deixo o usuário escolher se quer par ou ímpar
+    e = str(input('Você quer par ou ímpar? [P/i]'))
+    
+    # sorteio um número até 5, que é a quantidade de dedos em uma mão
+    número = random.choice(range(6))
+    print('Pronto, pensei já!') # informo o usuário que já escolhi um número e peço para ele escolher o dele 
+    n = int(input('Agora sua vez, pense num número até 5, qual é? '))
+    print('Eu pensei no número {} e você no {}'.format(número, n)) # informo o usuário sobre os números escolhidos
+    soma = número + n
+
+    # se a soma for ímpar
+    if soma % 2 != 0:
+        print('O resultado foi ímpar!')
+        
+        # e se o usuário escolhei os ímpares eu informo que ele ganhou e pergunto se deseja jogar novamente
+        if e == 'i' or e == 'I':
+            print('Parabéns, você ganhou!!!')
+            s = str(input('Foi sorte, agora eu ganho, vamos outra? [S/n]')).upper()
+        
+        # Mas se ele escolheu os pares eu informo que ele perdeu e pergunto se deseja jogar novamente
+        else:
+            print('Eu ganhei!!! acho que na próxima você consegue! haha')
+            s = str(input('Ganhei dessa vez, mas quer tentar outra? [S/n] ')).upper()
+    
+    # mas se a soma for par
+    else:
+        print('O resultado foi par!')
+        
+        # e o usuário escolheu os pares, eu informo que ele perdeu e pergunto se deseja jogar novamente
+        if e == 'I' or e == 'i':
+            print('Que pena, você perdeu, mas não se preocupe, ainda poderemos jogar outras vezes!')
+            s = str(input('Deseja jogar novamente: [S/n] ')).upper()
+       
+       # mas se ele escolheu os ímpares eu informo que ele ganhou e pergunto se deseja jogar novamente
+       else:
+            print('Uau, você ganhou, mas na próxima você perde! haha')
+            s = str(input('Deseja jogar outra vez? [S/n]')).upper()
+
+# Se ele não quiser jogar mais eu zombo dele
+print('Ok, ainda bem que você percebeu que não daria conta de jogar comigo! hahah)
